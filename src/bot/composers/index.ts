@@ -16,6 +16,7 @@ composer.callbackQuery(texts.yuridik, (ctx) => {
   const sendPhone = new Keyboard().requestContact(
     t(ctx, texts.add_phone_req_btn)
   );
+  ctx.deleteMessage();
   return ctx.reply(t(ctx, texts.add_phone), {
     reply_markup: { ...sendPhone, resize_keyboard: true },
     parse_mode: "HTML",
@@ -33,6 +34,8 @@ composer.callbackQuery(texts.jismoniy, (ctx) => {
   const sendPhone = new Keyboard().requestContact(
     t(ctx, texts.add_phone_req_btn)
   );
+  ctx.deleteMessage();
+
   return ctx.reply(t(ctx, texts.add_phone), {
     reply_markup: { ...sendPhone, resize_keyboard: true },
     parse_mode: "HTML",
