@@ -17,9 +17,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "pm2": "NODE_ENV=production pm2 start src/index.ts --watch",
+    "pm2": "NODE_ENV=production start",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --watch './**/*.ts' --exec 'ts-node' src/index.ts"
+    "dev": "nodemon --watch './**/*.ts' --exec 'ts-node' src/index.ts",
+    "start": "ts-node src/index.ts"
   },
   "keywords": [],
   "author": "",
