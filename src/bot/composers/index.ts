@@ -1,4 +1,4 @@
-import { Composer } from "grammy";
+import { Composer, Keyboard } from "grammy";
 import { texts } from "../constants/texts";
 import { t } from "../i18";
 import { main_menu } from "../markups/markups";
@@ -8,26 +8,38 @@ const composer = new Composer<MyContext>();
 
 composer.callbackQuery(texts.yuridik, (ctx) => {
   ctx.session.user.user_id = ctx.chat?.id || 0;
-  ctx.session.user.userName = ctx.from.username || "";
-  ctx.session.user.firstName = ctx.from.first_name;
-  ctx.session.user.shaxsi = t(ctx, texts.yuridik);
-  ctx.session.route = texts.takliflar;
-  return ctx.editMessageText(t(ctx, texts.takliflar_qoldirish));
+  ctx.session.user.tg_username = ctx.from?.username || "";
+  ctx.session.user.nick_name = ctx.from?.first_name || "";
+  ctx.session.user.paerson = t(ctx, ctx.callbackQuery.data);
+  ctx.session.user.offer = ctx.update.message?.text || "";
+  ctx.session.route = texts.add_phone;
+  const sendPhone = new Keyboard().requestContact(
+    t(ctx, texts.add_phone_req_btn)
+  );
+  return ctx.reply(t(ctx, texts.add_phone), {
+    reply_markup: { ...sendPhone, resize_keyboard: true },
+    parse_mode: "HTML",
+  });
 });
 
 composer.callbackQuery(texts.jismoniy, (ctx) => {
   ctx.session.user.user_id = ctx.chat?.id || 0;
-  ctx.session.user.userName = ctx.from.username || "";
-  ctx.session.user.firstName = ctx.from.first_name;
-  ctx.session.user.shaxsi = t(ctx, texts.jismoniy);
-  ctx.session.route = texts.takliflar;
-  return ctx.editMessageText(t(ctx, texts.takliflar_qoldirish));
+  ctx.session.user.tg_username = ctx.from?.username || "";
+  ctx.session.user.nick_name = ctx.from?.first_name || "";
+  ctx.session.user.offer = ctx.update.message?.text || "";
+  ctx.session.user.paerson = t(ctx, ctx.callbackQuery.data);
+  ctx.session.route = texts.add_phone;
+
+  const sendPhone = new Keyboard().requestContact(
+    t(ctx, texts.add_phone_req_btn)
+  );
+  return ctx.reply(t(ctx, texts.add_phone), {
+    reply_markup: { ...sendPhone, resize_keyboard: true },
+    parse_mode: "HTML",
+  });
 });
+
 composer.callbackQuery(texts.ha, (ctx) => {
-  ctx.session.user.user_id = ctx.chat?.id || 0;
-  ctx.session.user.userName = ctx.from.username || "";
-  ctx.session.user.firstName = ctx.from.first_name;
-  ctx.session.user.shaxsi = t(ctx, texts.jismoniy);
   ctx.session.route = texts.takliflar;
 
   return ctx.editMessageText(t(ctx, texts.takliflar_qoldirish));

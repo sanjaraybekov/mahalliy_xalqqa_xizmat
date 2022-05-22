@@ -27,6 +27,10 @@ export const texts = {
   sender: "sender",
   shaxsi: "shaxsi",
   nikename: "nikename",
+  phone: "phone",
   username: "username",
   taklif: "taklif",
+  add_phone: "add_phone",
+  add_phone_err: "add_phone_error",
+  add_phone_req_btn: "add_phone_req_btn",
 };

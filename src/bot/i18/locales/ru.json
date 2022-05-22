@@ -1,5 +1,5 @@
 {
-  "main_text": "\"Mahalliy Xalqga Xizmat\" MCHJ takliflar botimizga hush kelibsiz! Takliflarinigizni qo'ldirishdan oldin quyidagi tugmalar orqali shaxsingizni tasdiqlashingizni so'rab qolamiz.",
+  "main_text": "\"M_auction\" takliflar botimizga hush kelibsiz! Takliflarinigizni qo'ldirishdan oldin quyidagi tugmalar orqali shaxsingizni tasdiqlashingizni so'rab qolamiz.",
   "main_menu": "🏠 Asosiy",
   "yuridik": "Yuridik shaxs",
   "jismoniy": "Jismoniy shaxs",
@@ -9,5 +9,9 @@
   "shaxsi": "Shaxsi: ",
   "nikename": "Telegram nickname: ",
   "username": "Telegram username: ",
-  "taklif": "Taklif: "
+  "taklif": "Taklif: ",
+  "add_phone": "<b>Telefon raqamini yuboring.</b>\nBuni quyidagi tugmani bosish orqali yoki yozib amalga oshirishingiz mumkin.\n\n<b>Masalan:</b>\n901234567",
+  "add_phone_err": "Xatolik❗️ Iltimos telefon raqamni to'g'ri shaklda yuboring",
+  "add_phone_req_btn": "☎️ Telefon raqam yuborish",
+  "phone": "☎️ Telefon raqam: "
 }
