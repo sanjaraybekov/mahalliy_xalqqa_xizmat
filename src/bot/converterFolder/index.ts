@@ -1,8 +1,8 @@
-import { User } from "../../db/User";
+import { Users } from "../../db/User";
 const XLSX = require("xlsx");
 
 const convertJsonToExcel = async () => {
-  const usersData = await User.find();
+  const usersData = await Users.find();
 
   const workSheet = XLSX.utils.json_to_sheet(usersData);
   const workBook = XLSX.utils.book_new();

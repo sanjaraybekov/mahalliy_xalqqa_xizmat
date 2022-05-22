@@ -3,10 +3,7 @@ import { MyContext } from "../types/MyContext";
 import { texts } from "../constants/texts";
 import { t } from "../i18";
 import { sendPost } from "../helpers/sendPost";
-import bot from "../core/bot";
-import convertJsonToExcel from "../converterFolder";
-import { InputFile } from "grammy";
-import { User } from "../../db/User";
+import { Users } from "../../db/User";
 
 const router = new Router<MyContext>((ctx) => ctx.session.route);
 
@@ -27,7 +24,7 @@ router.route(texts.add_phone, async (ctx) => {
 router.route(texts.takliflar, async (ctx, next) => {
   if (ctx.update.message?.text) {
     ctx.session.user.offer = ctx.update.message.text;
-    const newUser = await User.create({
+    const newUser = await Users.create({
       user_id: ctx.session.user.user_id || 0,
       nick_name: ctx.session.user.nick_name,
       person: ctx.session.user.paerson,

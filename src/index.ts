@@ -1,7 +1,7 @@
 import { createConnection } from "typeorm";
 import { loadBot } from "./bot";
 import { PASSWORD_DB } from "./config";
-import { User } from "./db/User";
+import { Users } from "./db/User";
 
 const main = async () => {
   try {
@@ -12,7 +12,7 @@ const main = async () => {
       port: 5432,
       password: PASSWORD_DB,
       host: "localhost",
-      entities: [User],
+      entities: [Users],
       synchronize: true,
     });
     console.log("Connected to DB");
